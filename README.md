@@ -47,7 +47,7 @@ target = "+55DDD9XXXXXXXX"
 Execute o script:
 
 ```bash
-python main.py
+python app.py
 ```
 
 O bot irá:
