@@ -18,7 +18,7 @@ Um bot simples, fofo e automatizado que usa inteligência artificial para gerar 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/tuchanski/cute-response-generator.git
+git clone https://github.com/tuchanski/whatsapp-lovebot
 cd whatsapp-lovebot
 ```
 
