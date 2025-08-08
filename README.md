@@ -70,9 +70,7 @@ O bot irá:
 
 ## 📸 Exemplo de uso
 
-```
-Mensagem gerada: Você é a melhor parte dos meus dias. Te amo ❤️
-```
+<img src="img\whatsapp_lovebot.png" alt="Exemplo de Uso">
 
 ---
 
