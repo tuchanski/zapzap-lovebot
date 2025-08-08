@@ -1,17 +1,26 @@
-# whatsapp-lovebot 💌🤖
+# 💌 WhatsApp LoveBot
 
 Um bot simples, fofo e automatizado que usa inteligência artificial para gerar mensagens carinhosas e enviá-las pelo WhatsApp. Ideal para impressionar sua namorada.
+
+---
 
 ## ✨ O que ele faz?
 
 1. Gera uma mensagem fofa usando o modelo **LLaMA 3** local via **Ollama**
-2. Envia a mensagem instantaneamente via **WhatsApp Web** usando a biblioteca **pywhatkit**
+2. Exibe a mensagem gerada na interface web com Flask
+3. Permite enviar a mensagem instantaneamente via **WhatsApp Web** com **pywhatkit**
+
+---
 
 ## 🛠️ Tecnologias usadas
 
 - [Python 3.10+](https://www.python.org/)
+- [Flask](https://flask.palletsprojects.com/)
 - [Ollama](https://ollama.com) (executando o modelo `llama3.1:8b` localmente)
 - [pywhatkit](https://pypi.org/project/pywhatkit/) para automação do WhatsApp
+- HTML + CSS (Jinja2 template)
+
+---
 
 ## 📦 Instalação
 
@@ -25,7 +34,7 @@ cd whatsapp-lovebot
 2. Instale as dependências:
 
 ```bash
-pip install -r requirements.txt
+pip install flask pywhatkit
 ```
 
 3. Certifique-se de que o Ollama está instalado e rodando:
@@ -34,38 +43,46 @@ pip install -r requirements.txt
 ollama run llama3.1:8b
 ```
 
-4. Edite o número de destino no código:
+> ⚠️ Use o modelo `llama3.1:8b` corretamente nomeado conforme seu Ollama local.
 
-```python
-target = "+55DDD9XXXXXXXX"
-```
-
-> Use o formato internacional (com DDI `+55`, DDD, e número com 9 dígitos)
+---
 
 ## 🚀 Executando
 
-Execute o script:
+Execute a aplicação:
 
 ```bash
 python app.py
 ```
 
+Abra no navegador:
+
+```
+http://127.0.0.1:5000/
+```
+
 O bot irá:
-- Gerar uma mensagem fofa via IA
-- Mostrar o texto gerado no terminal
-- Abrir o WhatsApp Web e enviar a mensagem instantaneamente
+- Gerar uma mensagem fofa com IA
+- Mostrar a mensagem na interface web
+- Permitir o envio instantâneo para o número informado
 
-## 🧠 Exemplo de saída
+---
+
+## 📸 Exemplo de uso
 
 ```
-Enviando: Você é a melhor parte dos meus dias. Te amo ❤️
+Mensagem gerada: Você é a melhor parte dos meus dias. Te amo ❤️
 ```
 
-## ⚠️ Aviso importante
+---
 
-- A automação usa o navegador para enviar a mensagem. Tenha o WhatsApp Web logado.
-- Evite spam. Use com responsabilidade e carinho.
-- As mensagens são **geradas automaticamente por IA**, revise se necessário.
+## ⚠️ Avisos
+
+- O `pywhatkit` abre o WhatsApp Web automaticamente no navegador.
+- Você precisa estar logado no WhatsApp Web para que funcione.
+- Use com responsabilidade e carinho.
+
+---
 
 ## 📄 Autor
 
