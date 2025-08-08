@@ -1,2 +1,3 @@
 pywhatkit
 ollama
+flask

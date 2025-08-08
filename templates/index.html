@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>WhatsApp LoveBot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>WhatsApp LoveBot 💌🤖</h1>
+
+    <form method="post">
+      <label for="numero">Número do WhatsApp (com DDD):</label>
+      <input type="text" id="numero" name="numero" placeholder="+55XXXXXXXXXXX" value="{{ numero }}" required>
+      <button type="submit" name="action" value="generate">Gerar Resposta</button>
+
+      {% if response %}
+        <div class="response">
+          <h2>Resposta Gerada:</h2>
+          <p>{{ response }}</p>
+          <button type="submit" name="action" value="send">Enviar via WhatsApp</button>
+          <input type="hidden" name="response" value="{{ response }}">
+        </div>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>
