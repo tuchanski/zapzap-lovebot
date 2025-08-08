@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>WhatsApp LoveBot</title>
+  <title>💌 WhatsApp LoveBot</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -12,11 +12,11 @@
     <form method="post">
       <label for="numero">Número do WhatsApp (com DDD):</label>
       <input type="text" id="numero" name="numero" placeholder="+55XXXXXXXXXXX" value="{{ numero }}" required>
-      <button type="submit" name="action" value="generate">Gerar Resposta</button>
+      <button type="submit" name="action" value="generate">Gerar Mensagem</button>
 
       {% if response %}
         <div class="response">
-          <h2>Resposta Gerada:</h2>
+          <h2>Mensagem Gerada:</h2>
           <p>{{ response }}</p>
           <button type="submit" name="action" value="send">Enviar via WhatsApp</button>
           <input type="hidden" name="response" value="{{ response }}">
