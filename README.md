@@ -14,7 +14,7 @@ Um bot simples, fofo e automatizado que usa inteligência artificial para gerar 
 
 ## 🛠️ Tecnologias usadas
 
-- [Python 3.10+](https://www.python.org/)
+- [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/)
 - [Ollama](https://ollama.com) (executando o modelo `llama3.1:8b` localmente)
 - [pywhatkit](https://pypi.org/project/pywhatkit/) para automação do WhatsApp
