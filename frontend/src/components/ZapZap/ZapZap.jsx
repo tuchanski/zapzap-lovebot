@@ -7,8 +7,16 @@ function ZapZap() {
     const [response, setResponse] = useState("");
     const [target, setTarget] = useState("");
 
+    const [selectedTags, setSelectedTags] = useState([]);
+    const availableTags = [
+        "fofo", "apaixonado", "saudade",
+        "reconfortar", "bom-dia", "boa-noite",
+        "aleatorio", "emoji"
+    ];
+
     const handleResponse = () => {
-        fetch('http://127.0.0.1:5000/generate')
+        const query = selectedTags.length ? `?tags=${selectedTags.join(",")}` : "";
+        fetch('http://127.0.0.1:5000/generate' + query)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro na req');
@@ -105,6 +113,29 @@ function ZapZap() {
                 <div className={styles["user-input"]}>
                     <label htmlFor="">Número do WhatsApp</label>
                     <input id="target" type="text" placeholder="+55 (41) 99999-9999"/>
+
+                    <div className={styles["tags-container"]}>
+                        
+                        {availableTags.map((tag) => {
+                            const isSelected = selectedTags.includes(tag);
+                            return (
+                            <span
+                                key={tag}
+                                className={`${styles["tag"]} ${isSelected ? styles["tag-selected"] : ""}`}
+                                onClick={() => {
+                                if (isSelected) {
+                                    setSelectedTags(selectedTags.filter((t) => t !== tag));
+                                } else {
+                                    setSelectedTags([...selectedTags, tag]);
+                                }
+                                }}
+                            >
+                                {tag}
+                            </span>
+                            );
+                        })}
+                    </div>
+
                     <button className={styles["btn-system"]} onClick={handleResponse}>Gerar Mensagem...</button>
                 </div>
 
