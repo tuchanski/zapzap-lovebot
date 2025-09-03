@@ -25,20 +25,30 @@ function ZapZap() {
 
     const handleSendToTarget = () => {
         let inputTarget = document.getElementById('target').value;
-        setTarget(target);
 
-        if (inputTarget === "") {
-            alert("Por favor, insira um número de telefone válido.")
+        let onlyNumbers = inputTarget.replace(/\D/g, "");
+
+        if (!onlyNumbers.startsWith("55")) {
+            onlyNumbers = "55" + onlyNumbers;
+        }
+
+        let formatted = "+" + onlyNumbers;
+
+        if (!/^\+55\d{10,11}$/.test(formatted)) {
+            alert("Por favor, insira um número de telefone válido.");
             return;
         }
 
-         if (response === "") {
-            alert("Por favor, gere uma mensagem fofa.")
+        setTarget(formatted);
+
+        if (response === "") {
+            alert("Por favor, gere uma mensagem fofa.");
             return;
         }
 
-        handleWhatsAppRedirect(inputTarget);
-    }
+        handleWhatsAppRedirect(formatted);
+    };
+
 
     function handleWhatsAppRedirect(inputTarget) {
         
