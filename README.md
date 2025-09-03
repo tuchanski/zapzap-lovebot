@@ -17,7 +17,6 @@ Um bot simples, fofo e automatizado que usa inteligência artificial para gerar 
 **Frontend:**
 
 -   [React](https://reactjs.org/)
--   CSS Modules
 
 **Backend:**
 
@@ -74,7 +73,7 @@ O backend estará rodando em `http://127.0.0.1:5000`.
 
 ---
 
-### 2. Frontend (React)
+### 2. Frontend
 
 1. Navegue até a pasta do frontend:
 
@@ -101,8 +100,9 @@ O frontend estará disponível em `http://localhost:5173`.
 ## 🚀 Como usar
 
 1. Insira o número de WhatsApp do destinatário no campo **Número do WhatsApp**
-2. Clique em **Gerar Mensagem...** para criar uma mensagem fofa com IA
-3. Clique em **Enviar via WhatsApp** para enviar a mensagem diretamente
+2. Escolha as tags se quiser personalizar as mensagens carinhosas do **ZapZap Lovebot**
+3. Clique em **Gerar Mensagem...** para criar uma mensagem fofa com IA
+4. Clique em **Enviar via WhatsApp** para enviar a mensagem diretamente
 
 > ⚠️ O envio depende do WhatsApp Web estar logado no navegador.
 
