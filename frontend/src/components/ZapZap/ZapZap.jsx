@@ -104,7 +104,7 @@ function ZapZap() {
                     <button className={styles["btn-system"]} onClick={handleSendToTarget}>Enviar via WhatsApp</button>
                 </div>
 
-                <p>Powered by LLama AI</p>
+                <p id={styles["footer"]}>Powered by <span id={styles["llama-ref"]}>llama 3.3</span></p>
 
             </div>
         </div>   
