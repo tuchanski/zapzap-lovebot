@@ -10,7 +10,6 @@ body {
     background-color: #393E41;
 }
 
-
 h1 {
     margin: 0;
     margin-bottom: 15px;
@@ -56,6 +55,7 @@ h1 span {
     font-weight: 600;
     transition: .3s ease;
     cursor: pointer;
+    width: 100%;
 }
 
 .container .btn-system:hover {
@@ -70,6 +70,8 @@ h1 span {
 .user-input {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 30px;
 }
 
@@ -135,4 +137,36 @@ h1 span {
 
 #footer {
     margin-top: 50px;
+}
+
+.tags-container {
+  color: #F6F7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px; 
+  margin-bottom: 30px;
+}
+
+.tag {
+  display: inline-block; 
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #5A6166;
+  color: #F6F7EB;
+  cursor: pointer;
+  transition: 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  background-color: #73797e;
+}
+
+.tag-selected {
+  background-color: #26A96C;
+  color: white;
+  font-weight: 600;
 }
