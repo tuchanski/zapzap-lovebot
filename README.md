@@ -1,4 +1,4 @@
-# 💌 WhatsApp LoveBot
+# 💌 ZapZap LoveBot
 
 Um bot simples, fofo e automatizado que usa inteligência artificial para gerar mensagens carinhosas e enviá-las pelo WhatsApp. Ideal para impressionar sua namorada.
 
@@ -6,79 +6,119 @@ Um bot simples, fofo e automatizado que usa inteligência artificial para gerar 
 
 ## ✨ O que ele faz?
 
-1. Gera uma mensagem fofa usando o modelo **LLaMA 3** local via **Ollama**
-2. Exibe a mensagem gerada na interface web com Flask
+1. Gera uma mensagem fofa usando o modelo **LLaMA 3.3** via **Groq API**
+2. Exibe a mensagem gerada na interface web com **React**
 3. Permite enviar a mensagem instantaneamente via **WhatsApp Web** com **pywhatkit**
 
 ---
 
 ## 🛠️ Tecnologias usadas
 
-- [Python](https://www.python.org/)
-- [Flask](https://flask.palletsprojects.com/)
-- [Ollama](https://ollama.com) (executando o modelo `llama3.1:8b` localmente)
-- [pywhatkit](https://pypi.org/project/pywhatkit/) para automação do WhatsApp
-- HTML + CSS (Jinja2 template)
+**Frontend:**
+
+-   [React](https://reactjs.org/)
+-   CSS Modules
+
+**Backend:**
+
+-   [Python](https://www.python.org/)
+-   [Flask](https://flask.palletsprojects.com/)
+-   [Groq API](https://www.groq.com/) (usando `llama-3.3-70b-versatile`)
+-   [pywhatkit](https://pypi.org/project/pywhatkit/) para automação do WhatsApp
 
 ---
 
 ## 📦 Instalação
 
+### 1. Backend (Flask)
+
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/tuchanski/whatsapp-lovebot
-cd whatsapp-lovebot
+git clone https://github.com/tuchanski/zapzap-lovebot
+cd zapzap-lovebot
+```
+
+2. Crie e ative um ambiente virtual:
+
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Linux / Mac
+source venv/bin/activate
+```
+
+3. Instale as dependências:
+
+```bash
+pip install flask flask-cors pywhatkit groq
+```
+
+4. Configure a variável de ambiente `GROQ_API_KEY`:
+
+```bash
+# Windows
+set GROQ_API_KEY=<sua_api_key>
+# Linux / Mac
+export GROQ_API_KEY=<sua_api_key>
+```
+
+5. Rode o backend:
+
+```bash
+python api.py
+```
+
+O backend estará rodando em `http://127.0.0.1:5000`.
+
+---
+
+### 2. Frontend (React)
+
+1. Navegue até a pasta do frontend:
+
+```bash
+cd frontend
 ```
 
 2. Instale as dependências:
 
 ```bash
-pip install flask pywhatkit
+npm install
 ```
 
-3. Certifique-se de que o Ollama está instalado e rodando:
+3. Rode a aplicação:
 
 ```bash
-ollama run llama3.1:8b
+npm run dev
 ```
 
-> ⚠️ Use o modelo `llama3.1:8b` corretamente nomeado conforme seu Ollama local.
+O frontend estará disponível em `http://localhost:3000`.
 
 ---
 
-## 🚀 Executando
+## 🚀 Como usar
 
-Execute a aplicação:
+1. Insira o número de WhatsApp do destinatário no campo **Número do WhatsApp**
+2. Clique em **Gerar Mensagem...** para criar uma mensagem fofa com IA
+3. Clique em **Enviar via WhatsApp** para enviar a mensagem diretamente
 
-```bash
-python app.py
-```
-
-Abra no navegador:
-
-```
-http://127.0.0.1:5000/
-```
-
-O bot irá:
-- Gerar uma mensagem fofa com IA
-- Mostrar a mensagem na interface web
-- Permitir o envio instantâneo para o número informado
+> ⚠️ O envio depende do WhatsApp Web estar logado no navegador.
 
 ---
 
 ## 📸 Exemplo de uso
 
-<img src="img\whatsapp_lovebot.png" alt="Exemplo de Uso">
+![Exemplo de Uso](img/ex.jpg)
 
 ---
 
 ## ⚠️ Avisos
 
-- O `pywhatkit` abre o WhatsApp Web automaticamente no navegador.
-- Você precisa estar logado no WhatsApp Web para que funcione.
-- Use com responsabilidade e carinho.
+-   O `pywhatkit` abre o WhatsApp Web automaticamente no navegador.
+-   É necessário estar logado no WhatsApp Web para o envio funcionar.
+-   Use com responsabilidade e carinho.
 
 ---
 
