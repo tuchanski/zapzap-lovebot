@@ -29,7 +29,7 @@ Um bot simples, fofo e automatizado que usa inteligência artificial para gerar 
 
 ## 📦 Instalação
 
-### 1. Backend (Flask)
+### 1. Backend
 
 1. Clone o repositório:
 
