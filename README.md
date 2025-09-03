@@ -110,7 +110,7 @@ O frontend estará disponível em `http://localhost:5173`.
 
 ## 📸 Exemplo de uso
 
-![Exemplo de Uso](img/ex.jpg)
+![Exemplo de Uso](img/ex_zapzap.jpg)
 
 ---
 
