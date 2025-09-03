@@ -10,7 +10,7 @@ client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
 )
 
-def generate_response(model="llama3.1:8b") -> str:
+def generate_response() -> str:
     chat_completion = client.chat.completions.create(
     messages=[
         {
