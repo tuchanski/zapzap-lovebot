@@ -55,13 +55,13 @@ pip install flask flask-cors pywhatkit groq
 ```
 
 4. Configure a variável de ambiente `GROQ_API_KEY`:
-
 ```bash
 # Windows
 set GROQ_API_KEY=<sua_api_key>
 # Linux / Mac
 export GROQ_API_KEY=<sua_api_key>
 ```
+Caso não tenha uma chave para a API do Groq, leia a [documentação](https://console.groq.com/docs/quickstart).
 
 5. Rode o backend:
 
