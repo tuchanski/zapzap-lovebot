@@ -1,14 +1,26 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import ollama
+import os
+from groq import Groq
 
 app = Flask(__name__)
 CORS(app)
 
+client = Groq(
+    api_key=os.environ.get("GROQ_API_KEY"),
+)
+
 def generate_response(model="llama3.1:8b") -> str:
-    prompt = "Você está respondendo sua namorada. Seja o mais genérico possível. Envie uma mensagem fofa."
-    response = ollama.chat(model=model, messages=[{'role': 'user', 'content': prompt}])
-    return response['message']['content'].replace("\"", "")
+    chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Você está respondendo sua namorada. Seja o mais genérico possível. Envie uma mensagem fofa.",
+        }
+    ],
+        model="llama-3.3-70b-versatile",
+    )
+    return chat_completion.choices[0].message.content.replace("\"", "")
 
 def send_whatsapp_message(number_target: str, message: str):
     import pywhatkit
