@@ -66,7 +66,7 @@ Caso não tenha uma chave para a API do Groq, leia a [documentação](https://co
 5. Rode o backend:
 
 ```bash
-python api.py
+python app.py
 ```
 
 O backend estará rodando em `http://127.0.0.1:5000`.
